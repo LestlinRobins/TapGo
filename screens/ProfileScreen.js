@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useState } from "react";
 import Feather from "react-native-vector-icons/Feather";
+import * as Haptics from "expo-haptics";
 
 const Profile = () => {
   const [scrollY] = useState(new Animated.Value(0));
@@ -27,7 +28,7 @@ const Profile = () => {
 
   const animatedViewHeight = scrollY.interpolate({
     inputRange: [0, 150],
-    outputRange: ["13%", "8%"],
+    outputRange: ["10%", "7%"],
     extrapolate: "clamp",
   });
 
@@ -37,11 +38,16 @@ const Profile = () => {
     extrapolate: "clamp",
   });
 
+  const handleButtonPress = async (buttonFunction) => {
+    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
+    buttonFunction();
+  };
+
   return (
     <View
       style={{ backgroundColor: "#171429", height: "100%", paddingTop: "0%" }}
     >
-      <StatusBar barStyle="light-content" backgroundColor="#231C4D" />
+      <StatusBar barStyle="light-content" />
       <Animated.View
         style={{
           height: animatedViewHeight,
@@ -49,7 +55,7 @@ const Profile = () => {
           zIndex: 1,
           backgroundColor,
           paddingHorizontal: "5%",
-          marginTop: "5%",
+          marginTop: StatusBar.currentHeight, // Adjust to appear just after the status bar
           justifyContent: "center",
           borderBottomLeftRadius: 15,
           borderBottomRightRadius: 15,
@@ -136,6 +142,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("Profile pressed"))
+            }
           >
             <Feather
               name="user"
@@ -175,6 +184,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("Account pressed"))
+            }
           >
             <Feather
               name="at-sign"
@@ -214,6 +226,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("Notifications pressed"))
+            }
           >
             <Feather
               name="bell"
@@ -253,6 +268,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("Booking pressed"))
+            }
           >
             <Feather
               name="bell"
@@ -292,6 +310,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("Appearance pressed"))
+            }
           >
             <Feather
               name="bell"
@@ -331,6 +352,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("Privacy pressed"))
+            }
           >
             <Feather
               name="bell"
@@ -370,6 +394,9 @@ const Profile = () => {
               marginBottom: "4%",
               borderRadius: 18,
             }}
+            onPress={() =>
+              handleButtonPress(() => console.log("About pressed"))
+            }
           >
             <Feather
               name="bell"
