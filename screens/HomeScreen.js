@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useState } from "react";
 import Feather from "react-native-vector-icons/Feather";
+import * as Icon from "phosphor-react-native";
 import * as Haptics from "expo-haptics";
 
 const Home = () => {
@@ -126,371 +127,304 @@ const Home = () => {
             </Text>
             <Text
               style={{
-                fontFamily: "Satoshi-Bold",
+                fontFamily: "DMSans-Regular",
                 color: "#948BFF",
-                fontSize: 30,
-                alignSelf: "center",
+                fontSize: 23,
                 marginTop: "6%",
-              }}
-            >
-              Home Sweet Home
-            </Text>
-            <Text
-              style={{
-                fontFamily: "DMSans-Light",
-                color: "#6F6AB0",
-                fontSize: 10,
-                alignSelf: "center",
                 marginBottom: "6%",
               }}
             >
-              (Your Home ID)
+              What would you like to do today?
             </Text>
           </View>
-          <TouchableOpacity
+
+          <View
             style={{
               flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
+              justifyContent: "space-between",
             }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
           >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.Bus size="60px" color="#ABABFF" weight="regular" />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 15,
+                    marginTop: "5%",
+                  }}
+                >
+                  Book a ride
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.BeachBall size="60px" color="#ABABFF" weight="regular" />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 15,
+                    marginTop: "5%",
+                  }}
+                >
+                  Sports Courts
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View
             style={{
               flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
+              justifyContent: "space-between",
             }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
           >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.WashingMachine
+                size="60px"
+                color="#ABABFF"
+                weight="regular"
+              />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 15,
+                    marginTop: "5%",
+                  }}
+                >
+                  Washing Machine
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.Mailbox size="60px" color="#ABABFF" weight="regular" />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 15,
+                    marginTop: "5%",
+                  }}
+                >
+                  Leave Applications
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View
             style={{
               flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
+              justifyContent: "space-between",
             }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
           >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.ChalkboardTeacher
+                size="60px"
+                color="#ABABFF"
+                weight="regular"
+              />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 15,
+                    marginTop: "5%",
+                  }}
+                >
+                  Faculty Availability
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.Books size="60px" color="#ABABFF" weight="regular" />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 15,
+                    marginTop: "5%",
+                  }}
+                >
+                  Library Books
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View
             style={{
               flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
+              justifyContent: "space-between",
             }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
           >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
-            }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
-          >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
-            }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
-          >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
-            }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
-          >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              backgroundColor: "#1b163b",
-              padding: "3%",
-              width: "100%",
-              marginBottom: "4%",
-              borderRadius: 18,
-              elevation: 15,
-            }}
-            onPress={() => handleButtonPress(() => console.log("Home pressed"))}
-            onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
-          >
-            <Feather
-              name="home"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Home
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Welcome to your home screen. Here you can find all the latest
-                updates and information.
-              </Text>
-            </View>
-          </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.Blueprint size="60px" color="#ABABFF" weight="regular" />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 18,
+                    marginTop: "5%",
+                  }}
+                >
+                  College Map
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                flexDirection: "column",
+                alignItems: "center",
+                backgroundColor: "#1b163b",
+                padding: "5%",
+                width: "48%",
+                marginBottom: "4%",
+                borderRadius: 18,
+                elevation: 15,
+              }}
+              onPress={() =>
+                handleButtonPress(() => console.log("Home pressed"))
+              }
+              onPressIn={handleButtonPressIn}
+              activeOpacity={0.7}
+            >
+              <Icon.BowlSteam size="60px" color="#ABABFF" weight="regular" />
+              <View style={{ flex: 1 }}>
+                <Text
+                  style={{
+                    fontFamily: "DMSans-Medium",
+                    color: "#948BFF",
+                    fontSize: 18,
+                    marginTop: "5%",
+                  }}
+                >
+                  Buy Food
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </Animated.ScrollView>
     </View>
