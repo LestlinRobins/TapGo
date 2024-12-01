@@ -13,6 +13,7 @@ import Explore from "./screens/ExploreScreen";
 import LoginScreen from "./screens/LoginScreen";
 import { Feather } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
+import LottieView from "lottie-react-native";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,17 +35,41 @@ export default function App() {
     "Satoshi-Black": require("./assets/Fonts/Satoshi/Satoshi-Black.otf"),
   });
 
-  if (fontsLoaded) {
+  const [isReady, setIsReady] = React.useState(false);
+
+  React.useEffect(() => {
+    if (fontsLoaded) {
+      setTimeout(() => {
+        setIsReady(true);
+      }, 1000);
+    }
+  }, [fontsLoaded]);
+
+  if (!isReady) {
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Image
-          source={require("./assets/Images/new-logo.png")}
-          style={{ width: 100, height: 100 }}
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#120d20",
+        }}
+      >
+        <StatusBar style="light" />
+        <LottieView
+          autoPlay
+          style={{
+            width: 150,
+            height: 150,
+            backgroundColor: "transparent",
+          }}
+          loop={false}
+          // Find more Lottie files at https://lottiefiles.com/featured
+          source={require("./assets/Animations/Animation6.json")}
         />
       </View>
     );
   }
-
   const handleTabPress = async () => {
     await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
   };
