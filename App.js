@@ -34,8 +34,15 @@ export default function App() {
     "Satoshi-Black": require("./assets/Fonts/Satoshi/Satoshi-Black.otf"),
   });
 
-  if (!fontsLoaded) {
-    return <Text>Loading...</Text>;
+  if (fontsLoaded) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <Image
+          source={require("./assets/Images/new-logo.png")}
+          style={{ width: 100, height: 100 }}
+        />
+      </View>
+    );
   }
 
   const handleTabPress = async () => {
