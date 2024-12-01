@@ -10,7 +10,6 @@ import {
 import { useState } from "react";
 import Feather from "react-native-vector-icons/Feather";
 import * as Haptics from "expo-haptics";
-import { BlurView } from "expo-blur";
 
 const Profile = () => {
   const [scrollY] = useState(new Animated.Value(0));
@@ -81,13 +80,6 @@ const Profile = () => {
           Settings
         </Animated.Text>
       </Animated.View>
-      <BlurView
-        intensity={35}
-        experimentalBlurMethod="dimezisBlurView"
-        style={{ position: "absolute", top: 200, width: "100%", zIndex: 10 }}
-      >
-        <Text>Blurry</Text>
-      </BlurView>
       <Animated.ScrollView
         style={{ paddingHorizontal: "5%" }}
         onScroll={Animated.event(

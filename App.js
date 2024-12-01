@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import "expo-dev-client";
-import React, { Component } from "react";
+import React from "react";
 import { useFonts } from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./screens/HomeScreen";
 import Profile from "./screens/ProfileScreen";
 import Search from "./screens/SearchScreen";
@@ -14,7 +13,6 @@ import Explore from "./screens/ExploreScreen";
 import LoginScreen from "./screens/LoginScreen";
 import { Feather } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
-import { BlurView } from "expo-blur";
 
 const Tab = createBottomTabNavigator();
 
