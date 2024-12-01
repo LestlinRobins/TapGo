@@ -11,15 +11,13 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "newArchEnabled": true,
     "androidNavigationBar": {
-        "visible": true,
-        "barStyle": "dark-content",
-        "backgroundColor": "#000000"
-    }
-    ,
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+      "visible": true,
+      "barStyle": "dark-content",
+      "backgroundColor": "#000000"
+    },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -35,10 +33,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-font",
-      "@react-native-google-signin/google-signin"
-    ],
+    "plugins": ["expo-font", "@react-native-google-signin/google-signin"],
     "extra": {
       "eas": {
         "projectId": "82ca61f2-8440-4ea9-9075-0a088272f9e8"

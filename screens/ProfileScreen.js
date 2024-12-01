@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import Feather from "react-native-vector-icons/Feather";
 import * as Haptics from "expo-haptics";
+import { BlurView } from "expo-blur";
 
 const Profile = () => {
   const [scrollY] = useState(new Animated.Value(0));
@@ -28,26 +29,35 @@ const Profile = () => {
 
   const animatedViewHeight = scrollY.interpolate({
     inputRange: [0, 150],
-    outputRange: ["10%", "7%"],
+    outputRange: ["10%", "6%"],
     extrapolate: "clamp",
   });
 
   const backgroundColor = scrollY.interpolate({
     inputRange: [0, 150],
-    outputRange: ["#231C4D", "#171429"],
+    outputRange: ["#231C4D", "#231C4D"],
     extrapolate: "clamp",
   });
 
-  const handleButtonPress = async (buttonFunction) => {
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
-    buttonFunction();
+  const handleButtonPressIn = async () => {
+    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
   };
 
+  const handleButtonPressOut = async () => {
+    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
+  };
+
+  const handleButtonPress = async (buttonFunction) => {
+    // await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
+    buttonFunction();
+  };
+  // background: #120d20
+  // buttons: #1b163b
+  // headings: #948BFF
+  // paras: #6F6AB0
   return (
-    <View
-      style={{ backgroundColor: "#171429", height: "100%", paddingTop: "0%" }}
-    >
-      <StatusBar barStyle="light-content" />
+    <View style={{ backgroundColor: "#120d20", flex: 1, paddingTop: "0%" }}>
+      <StatusBar barStyle="light-content" backgroundColor="#231C4D" />
       <Animated.View
         style={{
           height: animatedViewHeight,
@@ -56,14 +66,14 @@ const Profile = () => {
           backgroundColor,
           paddingHorizontal: "5%",
           marginTop: StatusBar.currentHeight, // Adjust to appear just after the status bar
-          justifyContent: "center",
-          borderBottomLeftRadius: 15,
-          borderBottomRightRadius: 15,
+          borderBottomLeftRadius: 20,
+          borderBottomRightRadius: 20,
+          paddingTop: "3%",
         }}
       >
         <Animated.Text
           style={{
-            fontFamily: "Satoshi-Bold",
+            fontFamily: "DMSans-Bold",
             color: "#8E7EDE",
             fontSize: headerHeight,
           }}
@@ -71,6 +81,13 @@ const Profile = () => {
           Settings
         </Animated.Text>
       </Animated.View>
+      <BlurView
+        intensity={35}
+        experimentalBlurMethod="dimezisBlurView"
+        style={{ position: "absolute", top: 200, width: "100%", zIndex: 10 }}
+      >
+        <Text>Blurry</Text>
+      </BlurView>
       <Animated.ScrollView
         style={{ paddingHorizontal: "5%" }}
         onScroll={Animated.event(
@@ -81,7 +98,7 @@ const Profile = () => {
       >
         <View
           style={{
-            backgroundColor: "#171429",
+            backgroundColor: "#120d20",
             height: "100%",
             marginBottom: "0%",
             borderRadius: 15,
@@ -136,15 +153,18 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 15,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("Profile pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
               name="user"
@@ -178,15 +198,18 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 5,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("Account pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
               name="at-sign"
@@ -220,15 +243,18 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 5,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("Notifications pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
               name="bell"
@@ -262,18 +288,21 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 5,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("Booking pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
-              name="bell"
+              name="target"
               size={24}
               color="#948BFF"
               style={{ marginRight: 13 }}
@@ -304,18 +333,21 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 5,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("Appearance pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
-              name="bell"
+              name="feather"
               size={24}
               color="#948BFF"
               style={{ marginRight: 13 }}
@@ -346,18 +378,21 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 5,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("Privacy pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
-              name="bell"
+              name="eye-off"
               size={24}
               color="#948BFF"
               style={{ marginRight: 13 }}
@@ -388,18 +423,21 @@ const Profile = () => {
             style={{
               flexDirection: "row",
               alignItems: "center",
-              backgroundColor: "#231C4D",
+              backgroundColor: "#1b163b",
               padding: "3%",
               width: "100%",
               marginBottom: "4%",
               borderRadius: 18,
+              elevation: 5,
             }}
             onPress={() =>
               handleButtonPress(() => console.log("About pressed"))
             }
+            onPressIn={handleButtonPressIn}
+            activeOpacity={0.7}
           >
             <Feather
-              name="bell"
+              name="info"
               size={24}
               color="#948BFF"
               style={{ marginRight: 13 }}

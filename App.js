@@ -14,6 +14,7 @@ import Explore from "./screens/ExploreScreen";
 import LoginScreen from "./screens/LoginScreen";
 import { Feather } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
+import { BlurView } from "expo-blur";
 
 const Tab = createBottomTabNavigator();
 
@@ -152,16 +153,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#171429",
+    backgroundColor: "#120d20",
     height: "100%",
     justifyContent: "space-between",
     elevation: 3,
-    shadowColor: "black",
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
   },
 });
