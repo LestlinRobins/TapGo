@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StatusBar } from "react-native";
 
-function sportsCourtsDetails() {
+function SportsCourtsDetails() {
   return (
     <View
       style={{
@@ -18,4 +18,4 @@ function sportsCourtsDetails() {
   );
 }
 
-export default sportsCourtsDetails;
+export default SportsCourtsDetails;

@@ -18,7 +18,7 @@ import CollegeMapDetails from "./components/collegeMap/collegeMapDetails";
 import FacultyDetails from "./components/facultyAvailability/facultyAvailabilityDetails";
 import LeaveDetails from "./components/leaveApplications/leaveApplicationsDetails";
 import LibraryBooksDetails from "./components/libraryReturn/libraryBooksDetails";
-import sportsCourtsDetails from "./components/sportsCourtsBooking/sportsCourtsDetails";
+import SportsCourtsDetails from "./components/sportsCourtsBooking/sportsCourtsDetails";
 import WashingMachineDetails from "./components/washingMachineBooking/washingMachineDetails";
 
 function HomeScreen({ navigation }) {
@@ -49,7 +49,7 @@ function HomeScreen({ navigation }) {
   });
 
   const handleButtonPressIn = async () => {
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);
   };
 
   const handleButtonPressOut = async () => {
@@ -197,7 +197,7 @@ function HomeScreen({ navigation }) {
               }}
               onPress={() =>
                 handleButtonPress(() =>
-                  navigation.navigate("sportsCourtsDetails")
+                  navigation.navigate("SportsCourtsDetails")
                 )
               }
               onPressIn={handleButtonPressIn}
@@ -462,7 +462,7 @@ const Home = () => {
       }}
     >
       <HomeMainStack.Screen
-        name="Home"
+        name="HomeScreen"
         component={HomeScreen}
         options={{
           animationEnabled: true,
@@ -518,8 +518,8 @@ const Home = () => {
         }}
       />
       <HomeMainStack.Screen
-        name="sportsCourtsDetails"
-        component={sportsCourtsDetails}
+        name="SportsCourtsDetails"
+        component={SportsCourtsDetails}
         options={{
           animationEnabled: true,
           ...TransitionPresets.SlideFromRightIOS,
