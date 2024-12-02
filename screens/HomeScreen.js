@@ -11,8 +11,11 @@ import * as Icon from "phosphor-react-native";
 import * as Haptics from "expo-haptics";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TransitionPresets } from "@react-navigation/stack";
+
 import BusDetails from "./components/busBooking/busBooking";
 import CafeDetails from "./components/cafeteriaBooking/cafeteriaBooking";
+import CollegeMap from "./components/collegeMap/collegeMap";
+import FacultyDetails from "./components/facultyAvailability/facultyAvailability";
 
 function HomeScreen({ navigation }) {
   const [scrollY] = useState(new Animated.Value(0));
@@ -302,7 +305,7 @@ function HomeScreen({ navigation }) {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => console.log("Home pressed"))
+                handleButtonPress(() => navigation.navigate("FacultyDetails"))
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -376,7 +379,7 @@ function HomeScreen({ navigation }) {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => console.log("Home pressed"))
+                handleButtonPress(() => navigation.navigate("CollegeMap"))
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -465,6 +468,22 @@ const Home = () => {
       <HomeStack.Screen
         name="CafeDetails"
         component={CafeDetails}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <HomeStack.Screen
+        name="CollegeMap"
+        component={CollegeMap}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <HomeStack.Screen
+        name="FacultyDetails"
+        component={FacultyDetails}
         options={{
           animationEnabled: true,
           ...TransitionPresets.SlideFromRightIOS,
