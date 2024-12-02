@@ -5,14 +5,16 @@ import {
   TouchableOpacity,
   StatusBar,
   Animated,
-  Image,
 } from "react-native";
 import { useState } from "react";
-import Feather from "react-native-vector-icons/Feather";
 import * as Icon from "phosphor-react-native";
 import * as Haptics from "expo-haptics";
+import { createStackNavigator } from "@react-navigation/stack";
+import { TransitionPresets } from "@react-navigation/stack";
+import BusDetails from "./components/busBooking/busBooking";
+import CafeDetails from "./components/cafeteriaBooking/cafeteriaBooking";
 
-const Home = () => {
+function HomeScreen({ navigation }) {
   const [scrollY] = useState(new Animated.Value(0));
 
   const headerHeight = scrollY.interpolate({
@@ -69,7 +71,7 @@ const Home = () => {
         style={{
           height: animatedViewHeight,
           transform: [{ translateY: headerPosition }],
-          zIndex: 1,
+          zIndex: 0,
           backgroundColor,
           paddingHorizontal: "5%",
           marginTop: StatusBar.currentHeight,
@@ -156,7 +158,7 @@ const Home = () => {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => console.log("Home pressed"))
+                handleButtonPress(() => navigation.navigate("BusDetails"))
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -405,7 +407,7 @@ const Home = () => {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => console.log("Home pressed"))
+                handleButtonPress(() => navigation.navigate("CafeDetails"))
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -428,6 +430,47 @@ const Home = () => {
         </View>
       </Animated.ScrollView>
     </View>
+  );
+}
+
+const HomeStack = createStackNavigator();
+
+const Home = () => {
+  return (
+    <HomeStack.Navigator
+      screenOptions={{
+        headerMode: "screen",
+        headerTintColor: "white",
+        headerStyle: { backgroundColor: "tomato" },
+        title: false,
+        headerShown: false,
+      }}
+    >
+      <HomeStack.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.BottomSheetAndroid,
+        }}
+      />
+      <HomeStack.Screen
+        name="BusDetails"
+        component={BusDetails}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <HomeStack.Screen
+        name="CafeDetails"
+        component={CafeDetails}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+    </HomeStack.Navigator>
   );
 };
 
