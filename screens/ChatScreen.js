@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { createStackNavigator } from "@react-navigation/stack";
-import { TransitionSpecs } from "@react-navigation/stack";
+import { TransitionSpecs, TransitionPresets } from "@react-navigation/stack";
 
 function DetailsScreen() {
   return (
@@ -291,12 +291,18 @@ const Chats = () => {
       <HomeStack.Screen
         name="Home"
         component={HomeScreen}
-        options={{ animationEnabled: false }}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.BottomSheetAndroid,
+        }}
       />
       <HomeStack.Screen
         name="Details"
         component={DetailsScreen}
-        options={{ animationEnabled: false }}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
       />
     </HomeStack.Navigator>
   );

@@ -28,6 +28,7 @@
     "expo-navigation-bar": "~4.0.4",
     "expo-status-bar": "~2.0.0",
     "expo-three": "^2.2.1",
+    "graceful-fs": "^4.2.11",
     "lottie-react-native": "7.1.0",
     "phosphor-react-native": "^2.2.1",
     "react": "18.3.1",
