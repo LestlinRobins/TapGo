@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StatusBar } from "react-native";
 
-function CollegeMap() {
+function CollegeMapDetails() {
   return (
     <View
       style={{
@@ -18,4 +18,4 @@ function CollegeMap() {
   );
 }
 
-export default CollegeMap;
+export default CollegeMapDetails;

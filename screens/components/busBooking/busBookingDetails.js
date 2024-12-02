@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StatusBar } from "react-native";
 
-function BusDetails() {
+function BusBookingDetails() {
   return (
     <View
       style={{
@@ -18,4 +18,4 @@ function BusDetails() {
   );
 }
 
-export default BusDetails;
+export default BusBookingDetails;

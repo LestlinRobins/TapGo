@@ -12,13 +12,14 @@ import * as Haptics from "expo-haptics";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TransitionPresets } from "@react-navigation/stack";
 
-import BusDetails from "./components/busBooking/busBookingDetails";
+import BusBookingDetails from "./components/busBooking/busBookingDetails";
 import CafeDetails from "./components/cafeteriaBooking/cafeteriaBookingDetails";
-import CollegeMap from "./components/collegeMap/collegeMapDetails";
+import CollegeMapDetails from "./components/collegeMap/collegeMapDetails";
 import FacultyDetails from "./components/facultyAvailability/facultyAvailabilityDetails";
 import LeaveDetails from "./components/leaveApplications/leaveApplicationsDetails";
 import LibraryBooksDetails from "./components/libraryReturn/libraryBooksDetails";
 import sportsCourtsDetails from "./components/sportsCourtsBooking/sportsCourtsDetails";
+import WashingMachineDetails from "./components/washingMachineBooking/washingMachineDetails";
 
 function HomeScreen({ navigation }) {
   const [scrollY] = useState(new Animated.Value(0));
@@ -236,7 +237,9 @@ function HomeScreen({ navigation }) {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => console.log("Home pressed"))
+                handleButtonPress(() =>
+                  navigation.navigate("WashingMachineDetails")
+                )
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -386,7 +389,9 @@ function HomeScreen({ navigation }) {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => navigation.navigate("CollegeMap"))
+                handleButtonPress(() =>
+                  navigation.navigate("CollegeMapDetails")
+                )
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -466,7 +471,7 @@ const Home = () => {
       />
       <HomeMainStack.Screen
         name="BusDetails"
-        component={BusDetails}
+        component={BusBookingDetails}
         options={{
           animationEnabled: true,
           ...TransitionPresets.SlideFromRightIOS,
@@ -481,8 +486,8 @@ const Home = () => {
         }}
       />
       <HomeMainStack.Screen
-        name="CollegeMap"
-        component={CollegeMap}
+        name="CollegeMapDetails"
+        component={CollegeMapDetails}
         options={{
           animationEnabled: true,
           ...TransitionPresets.SlideFromRightIOS,
@@ -515,6 +520,14 @@ const Home = () => {
       <HomeMainStack.Screen
         name="sportsCourtsDetails"
         component={sportsCourtsDetails}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+      <HomeMainStack.Screen
+        name="WashingMachineDetails"
+        component={WashingMachineDetails}
         options={{
           animationEnabled: true,
           ...TransitionPresets.SlideFromRightIOS,
