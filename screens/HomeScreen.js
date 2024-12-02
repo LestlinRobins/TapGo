@@ -18,6 +18,7 @@ import CollegeMap from "./components/collegeMap/collegeMap";
 import FacultyDetails from "./components/facultyAvailability/facultyAvailability";
 import LeaveDetails from "./components/leaveApplications/leaveApplications";
 import LibraryBooksDetails from "./components/libraryReturn/libraryBooksDetails";
+import sportsCourtsDetails from "./components/sportsCourtsBooking/sportsCourtsDetails";
 
 function HomeScreen({ navigation }) {
   const [scrollY] = useState(new Animated.Value(0));
@@ -194,7 +195,9 @@ function HomeScreen({ navigation }) {
                 elevation: 15,
               }}
               onPress={() =>
-                handleButtonPress(() => console.log("Home pressed"))
+                handleButtonPress(() =>
+                  navigation.navigate("sportsCourtsDetails")
+                )
               }
               onPressIn={handleButtonPressIn}
               activeOpacity={0.7}
@@ -440,11 +443,11 @@ function HomeScreen({ navigation }) {
   );
 }
 
-const HomeStack = createStackNavigator();
+const HomeMainStack = createStackNavigator();
 
 const Home = () => {
   return (
-    <HomeStack.Navigator
+    <HomeMainStack.Navigator
       screenOptions={{
         headerMode: "screen",
         headerTintColor: "white",
@@ -453,7 +456,7 @@ const Home = () => {
         headerShown: false,
       }}
     >
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -461,7 +464,7 @@ const Home = () => {
           ...TransitionPresets.BottomSheetAndroid,
         }}
       />
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="BusDetails"
         component={BusDetails}
         options={{
@@ -469,7 +472,7 @@ const Home = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="CafeDetails"
         component={CafeDetails}
         options={{
@@ -477,7 +480,7 @@ const Home = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="CollegeMap"
         component={CollegeMap}
         options={{
@@ -485,7 +488,7 @@ const Home = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="FacultyDetails"
         component={FacultyDetails}
         options={{
@@ -493,7 +496,7 @@ const Home = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="LeaveDetails"
         component={LeaveDetails}
         options={{
@@ -501,7 +504,7 @@ const Home = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-      <HomeStack.Screen
+      <HomeMainStack.Screen
         name="LibraryBooksDetails"
         component={LibraryBooksDetails}
         options={{
@@ -509,7 +512,15 @@ const Home = () => {
           ...TransitionPresets.SlideFromRightIOS,
         }}
       />
-    </HomeStack.Navigator>
+      <HomeMainStack.Screen
+        name="sportsCourtsDetails"
+        component={sportsCourtsDetails}
+        options={{
+          animationEnabled: true,
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      />
+    </HomeMainStack.Navigator>
   );
 };
 
