@@ -12,11 +12,11 @@ import * as Haptics from "expo-haptics";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TransitionPresets } from "@react-navigation/stack";
 
-import BusDetails from "./components/busBooking/busBooking";
-import CafeDetails from "./components/cafeteriaBooking/cafeteriaBooking";
-import CollegeMap from "./components/collegeMap/collegeMap";
-import FacultyDetails from "./components/facultyAvailability/facultyAvailability";
-import LeaveDetails from "./components/leaveApplications/leaveApplications";
+import BusDetails from "./components/busBooking/busBookingDetails";
+import CafeDetails from "./components/cafeteriaBooking/cafeteriaBookingDetails";
+import CollegeMap from "./components/collegeMap/collegeMapDetails";
+import FacultyDetails from "./components/facultyAvailability/facultyAvailabilityDetails";
+import LeaveDetails from "./components/leaveApplications/leaveApplicationsDetails";
 import LibraryBooksDetails from "./components/libraryReturn/libraryBooksDetails";
 import sportsCourtsDetails from "./components/sportsCourtsBooking/sportsCourtsDetails";
 
