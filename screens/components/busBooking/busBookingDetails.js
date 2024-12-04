@@ -77,25 +77,14 @@ function BusBookingDetailsMainScreen({ navigation }) {
           <View style={{}}>
             <Text
               style={{
-                fontFamily: "Satoshi-Bold",
-                fontSize: 25,
-                marginTop: "6%",
+                fontFamily: "DMSans-Regular",
+                fontSize: 23,
+                marginTop: "9%",
                 color: "#948BFF",
               }}
             >
               Heading to college or back to the hostel?
             </Text>
-            <Image
-              style={{
-                height: 150,
-                width: 150,
-                borderRadius: 100,
-                top: "1%",
-                alignSelf: "center",
-                marginTop: "6%",
-              }}
-              // source={require("../../assets/Images/avatar.png")}
-            />
           </View>
           <TouchableOpacity
             style={{
@@ -107,68 +96,58 @@ function BusBookingDetailsMainScreen({ navigation }) {
               marginBottom: "6%",
               borderRadius: 18,
               elevation: 15,
-              height: "25%",
+              height: "35%",
               justifyContent: "center",
+              marginTop: "10%",
             }}
             activeOpacity={0.7}
-            onPress={() => navigation.navigate("HostelToCampus")}
+            onPress={() =>
+              handleButtonPress(() => navigation.navigate("HostelToCampus"))
+            }
+            onPressIn={handleButtonPressIn}
           >
-            <Icon.Bus size="60px" color="#6666FF" weight="regular" />
+            <Icon.GraduationCap size="60px" color="#6666FF" weight="bold" />
             <Text
               style={{
-                fontFamily: "DMSans-Bold",
+                fontFamily: "DMSans-Medium",
                 color: "#948BFF",
                 fontSize: 18,
                 marginTop: "3%",
               }}
             >
-              Profile
+              Campus
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
-              flexDirection: "row",
+              flexDirection: "column",
               alignItems: "center",
               backgroundColor: "#1b163b",
-              padding: "3%",
+              padding: "5%",
               width: "100%",
-              marginBottom: "4%",
+              marginBottom: "6%",
               borderRadius: 18,
-              elevation: 5,
+              elevation: 15,
+              height: "35%",
+              justifyContent: "center",
             }}
+            activeOpacity={0.7}
             onPress={() =>
               handleButtonPress(() => navigation.navigate("CampusToHostel"))
             }
             onPressIn={handleButtonPressIn}
-            activeOpacity={0.7}
           >
-            <Feather
-              name="at-sign"
-              size={24}
-              color="#948BFF"
-              style={{ marginRight: 13 }}
-            />
-            <View style={{ flex: 1 }}>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Bold",
-                  color: "#948BFF",
-                  fontSize: 18,
-                }}
-              >
-                Account
-              </Text>
-              <Text
-                style={{
-                  fontFamily: "DMSans-Light",
-                  color: "#6F6AB0",
-                  fontSize: 12,
-                }}
-              >
-                Customize your account by updating security, changing your
-                password, and adjusting settings to match your vibe.
-              </Text>
-            </View>
+            <Icon.Bed size="60px" color="#6666FF" weight="bold" />
+            <Text
+              style={{
+                fontFamily: "DMSans-Medium",
+                color: "#948BFF",
+                fontSize: 18,
+                marginTop: "3%",
+              }}
+            >
+              Hostel
+            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
