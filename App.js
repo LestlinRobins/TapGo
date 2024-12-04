@@ -91,7 +91,7 @@ export default function App() {
                   : "ios-information-circle-outline";
                 iconColor = focused ? "#A3A3FF" : "#9191FF";
               } else if (route.name === "Search") {
-                icon = "search";
+                icon = "help-circle";
                 iconName = focused ? "ios-list" : "ios-list-outline";
                 iconColor = focused ? "#A3A3FF" : "#9191FF";
               } else if (route.name === "Explore") {
@@ -99,11 +99,11 @@ export default function App() {
                 iconName = focused ? "ios-list" : "ios-list-outline";
                 iconColor = focused ? "#A3A3FF" : "#9191FF";
               } else if (route.name === "Chats") {
-                icon = "message-circle";
+                icon = "bell";
                 iconName = focused ? "ios-list" : "ios-list-outline";
                 iconColor = focused ? "#A3A3FF" : "#9191FF";
               } else if (route.name === "Profile") {
-                icon = "user";
+                icon = "settings";
                 iconName = focused ? "ios-list" : "ios-list-outline";
                 iconColor = focused ? "#A3A3FF" : "#9191FF";
               }
