@@ -36,6 +36,7 @@ export default function App() {
   });
 
   const [isReady, setIsReady] = React.useState(false);
+  const [user, setUser] = React.useState(null);
 
   React.useEffect(() => {
     if (fontsLoaded) {
@@ -69,6 +70,10 @@ export default function App() {
         />
       </View>
     );
+  }
+
+  if (!user) {
+    return <LoginScreen />;
   }
   const handleTabPress = async () => {
     await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Rigid);

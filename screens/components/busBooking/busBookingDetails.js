@@ -12,11 +12,24 @@ import * as Haptics from "expo-haptics";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TransitionPresets } from "@react-navigation/stack";
 import * as Icon from "phosphor-react-native";
+import SeatsLayout from "@mindinventory/react-native-bus-seat-layout";
 
 function HostelToCampus() {
   return (
-    <View style={{ height: "50%", backgroundColor: "pink", marginTop: "25%" }}>
+    <View style={{ backgroundColor: "#120d20" }}>
       <Text>Hostel to Campus</Text>
+      <View style={{ marginTop: "10%", height: "65%", width: "60%" }}>
+        <SeatsLayout
+          row={6}
+          layout={{ columnOne: 1, columnTwo: 2 }}
+          selectedSeats={[]}
+          numberTextStyle={{ fontSize: 12 }}
+          getBookedSeats={(seats) => {
+            console.log("getBookedSeats :: ", seats);
+          }}
+          style={{ backgroundColor: "#120d20" }}
+        />
+      </View>
     </View>
   );
 }
