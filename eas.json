@@ -7,7 +7,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "GOOGLE_SERVICES_JSON": "@googleServicesJson"
+        "GOOGLE_SERVICES_JSON": "./google-services.json"
       }
     },
     "preview": {
