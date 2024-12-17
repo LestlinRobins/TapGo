@@ -23,7 +23,7 @@ module.exports = {
     },
     android: {
       googleServicesFile:
-        process.env.GOOGLE_SERVICES_JSON ?? "google-services.json",
+        process.env.GOOGLE_SERVICES_JSON || "google-services.json",
       softwareKeyboardLayoutMode: "pan",
       adaptiveIcon: {
         foregroundImage: "./assets/adaptive-icon.png",
