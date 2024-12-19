@@ -11,6 +11,7 @@ import * as Icon from "phosphor-react-native";
 import * as Haptics from "expo-haptics";
 import { createStackNavigator } from "@react-navigation/stack";
 import { TransitionPresets } from "@react-navigation/stack";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
 
 import BusBookingDetails from "./components/busBooking/busBookingDetails";
 import CafeDetails from "./components/cafeteriaBooking/cafeteriaBookingDetails";
@@ -20,6 +21,13 @@ import LeaveDetails from "./components/leaveApplications/leaveApplicationsDetail
 import LibraryBooksDetails from "./components/libraryReturn/libraryBooksDetails";
 import SportsCourtsDetails from "./components/sportsCourtsBooking/sportsCourtsDetails";
 import WashingMachineDetails from "./components/washingMachineBooking/washingMachineDetails";
+import { userInfo } from "./LoginScreen";
+
+const logout = () => {
+  GoogleSignin.revokeAccess();
+  GoogleSignin.signOut();
+  userInfo = null;
+};
 
 function HomeScreen({ navigation }) {
   const [scrollY] = useState(new Animated.Value(0));
@@ -143,10 +151,21 @@ function HomeScreen({ navigation }) {
                 marginBottom: "6%",
               }}
             >
-              What would you like to do today?
+              {/* What would you like to do today? */}
+              {/* {JSON.stringify(userInfo.user.email)} */}
             </Text>
           </View>
-
+          <TouchableOpacity
+            style={{
+              width: "100%",
+              height: "10%",
+              backgroundColor: "white",
+              color: "black",
+            }}
+            onPress={logout()}
+          >
+            <Text>LOGOUT</Text>
+          </TouchableOpacity>
           <View
             style={{
               flexDirection: "row",
