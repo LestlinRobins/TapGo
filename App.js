@@ -65,7 +65,6 @@ export default function App() {
             backgroundColor: "transparent",
           }}
           loop={false}
-          // Find more Lottie files at https://lottiefiles.com/featured
           source={require("./assets/Animations/Animation6.json")}
         />
       </View>
